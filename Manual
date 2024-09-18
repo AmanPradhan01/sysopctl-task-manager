@@ -1,0 +1,119 @@
+.TH SYSOPCTL 1 "September 2024" "v0.1.0" "System Operations Control Tool"
+.SH NAME
+sysopctl \- A tool for managing system resources and tasks.
+.SH SYNOPSIS
+.B sysopctl
+[\fB--help\fR] [\fB--version\fR]
+.br
+.B sysopctl service
+[\fBlist\fR | \fBstart\fR \fIservice-name\fR | \fBstop\fR \fIservice-name\fR]
+.br
+.B sysopctl system
+[\fBload\fR]
+.br
+.B sysopctl disk
+[\fBusage\fR]
+.br
+.B sysopctl process
+[\fBmonitor\fR]
+.br
+.B sysopctl logs
+[\fBanalyze\fR]
+.br
+.B sysopctl backup
+\fIpath\fR
+.SH DESCRIPTION
+.B sysopctl
+is a command-line utility designed to help system administrators manage system resources and perform administrative tasks more effectively. It allows for listing and controlling services, monitoring system load and processes, checking disk usage, analyzing logs, and backing up system files.
+.SH OPTIONS
+.TP
+\fB--help\fR
+Displays help information, listing all available commands and options.
+.TP
+\fB--version\fR
+Shows the version number of the command.
+.SH COMMANDS
+The following commands are available in \fBsysopctl\fR:
+
+.TP
+.B service list
+Lists all active services running on the system, similar to \fBsystemctl list-units --type=service\fR.
+
+.TP
+.B service start \fI<service-name>\fR
+Starts the specified service, similar to \fBsystemctl start <service-name>\fR.
+
+.TP
+.B service stop \fI<service-name>\fR
+Stops the specified service, similar to \fBsystemctl stop <service-name>\fR.
+
+.TP
+.B system load
+Displays current system load averages, similar to the output of the \fBuptime\fR command.
+
+.TP
+.B disk usage
+Shows disk usage statistics by partition, akin to \fBdf -h\fR.
+
+.TP
+.B process monitor
+Monitors real-time process activity, similar to tools like \fBtop\fR or \fBhtop\fR.
+
+.TP
+.B logs analyze
+Analyzes recent critical log entries, using tools like \fBjournalctl\fR to display system logs.
+
+.TP
+.B backup \fI<path>\fR
+Initiates a backup of the specified directory path, utilizing \fBrsync\fR or a similar tool for file transfers.
+
+.SH EXAMPLES
+.TP
+\fBsysopctl --help\fR
+Displays the help message with available commands and usage examples.
+
+.TP
+\fBsysopctl service list\fR
+Lists all active services running on the system.
+
+.TP
+\fBsysopctl service start sshd\fR
+Starts the SSH daemon service.
+
+.TP
+\fBsysopctl system load\fR
+Displays current system load averages.
+
+.TP
+\fBsysopctl disk usage\fR
+Shows disk usage statistics for each partition.
+
+.TP
+\fBsysopctl process monitor\fR
+Monitors real-time system process activity.
+
+.TP
+\fBsysopctl logs analyze\fR
+Analyzes and displays recent critical log entries from the system logs.
+
+.TP
+\fBsysopctl backup /home/user/docs\fR
+Backs up the \fI/home/user/docs\fR directory using a secure and efficient file transfer tool.
+
+.SH SEE ALSO
+.BR systemctl (1),
+.BR uptime (1),
+.BR df (1),
+.BR top (1),
+.BR journalctl (1),
+.BR rsync (1)
+.SH AUTHOR
+sysopctl was developed as part of a custom solution for managing system operations.
+.SH COPYRIGHT
+Copyright (C) 2024 by sysopctl team.
+Licensed under the Apache License, Version 2.0.
+
+
+
+
+
